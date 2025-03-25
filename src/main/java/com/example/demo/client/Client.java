@@ -1,8 +1,23 @@
 package com.example.demo.client;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Client {
+    @Id
+    @SequenceGenerator(
+            name = "client_sequence",
+            sequenceName = "client_sequence",
+            allocationSize = 1
+    )
+
+    @GeneratedValue (
+           strategy = GenerationType.SEQUENCE,
+            generator = "client_sequence"
+    )
     private Long id;
     private String fname;
     private String onames;
@@ -14,7 +29,7 @@ public class Client {
     }
 
     public Client(String email, LocalDate dob, Long client_idno, String onames, String fname, Long id) {
-        this.id = id;
+//        this.id = id;
         this.fname = fname;
         this.onames = onames;
         this.client_idno = client_idno;
