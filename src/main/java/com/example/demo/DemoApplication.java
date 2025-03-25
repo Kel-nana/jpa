@@ -19,17 +19,8 @@ public class DemoApplication {
 	}
 
 	@GetMapping()
-	public List<Client> hello () {
-		return List.of(
-				new Client(
-						"mawai@gmail.com",
-						LocalDate.of(2000, Month.MARCH,27),
-						27119287L,
-						"Mwai",
-						"Kelvin",
-						1L
-				)
-		);
+	public String hello() {
+		return "Hello Spring Boot";
 	}
 
 }
