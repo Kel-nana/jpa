@@ -7,8 +7,8 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "client",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = "client_idno"),
-                @UniqueConstraint(columnNames = "email")
+                @UniqueConstraint(name = "client_idno_unique_constrain", columnNames = "client_idno"),
+                @UniqueConstraint(name = "email_unique_constrain", columnNames = "email")
         })
 
 public class Client {
