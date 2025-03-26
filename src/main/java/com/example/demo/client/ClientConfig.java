@@ -14,25 +14,25 @@ public class ClientConfig {
     @Bean
     CommandLineRunner commandLineRunner(ClientRepository repository) {
         return args -> {
-            Client kelvin = new Client(
-                    "Bryan",
-                    "Kimani",
-                    12349287L,
+            Client Linda = new Client(
+                    "Linda",
+                    "Tina",
+                    45679287L,
                     LocalDate.of(2019, Month.APRIL, 05),
-                    "kimani@gmail.com"
+                    "linda@gmail.com"
             );
 
-            Client lulu = new Client(
-                    "Alexandria",
-                    "Kyalo",
-                    27439287L,
+            Client Joy = new Client(
+                    "Joy",
+                    "Blessing",
+                    27439877L,
                     LocalDate.of(2015, Month.AUGUST, 07),
-                    "kyalo@gmail.com"
+                    "blessing@gmail.com"
 
             );
 
             // Save clients to the database
-            repository.saveAll(List.of(kelvin, lulu));
+            repository.saveAll(List.of(Linda, Joy));
         };
     }
 }

@@ -5,7 +5,12 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table
+@Table(name = "client",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = "client_idno"),
+                @UniqueConstraint(columnNames = "email")
+        })
+
 public class Client {
     @Id
     @SequenceGenerator(
@@ -18,11 +23,42 @@ public class Client {
            strategy = GenerationType.SEQUENCE,
             generator = "client_sequence"
     )
+
+    @Column(
+            name = "id",
+            updatable = false
+    )
     private Long id;
+
+    @Column(
+            name = "fname",
+            nullable = false
+//            columnDefinition = "Text"
+    )
     private String fname;
+
+    @Column(
+            name = "onames",
+            nullable = false
+//            columnDefinition = "Text"
+    )
     private String onames;
+
+    @Column(
+            name = "client_idno",
+            nullable = false
+//            unique = true
+    )
     private  Long client_idno;
+
     private LocalDate dob;
+
+    @Column(
+            name = "email",
+            nullable = false
+//            unique = true,
+//            columnDefinition = "Text"
+    )
     private String email;
 
     public Client() {
