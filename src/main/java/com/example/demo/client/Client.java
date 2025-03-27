@@ -1,6 +1,8 @@
 package com.example.demo.client;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
@@ -11,6 +13,9 @@ import java.time.LocalDate;
                 @UniqueConstraint(name = "email_unique_constrain", columnNames = "email")
         })
 
+//using lombook : https://medium.com/devdomain/using-lombok-in-spring-boot-simplifying-your-code-c38057894cb8
+@Getter
+@Setter
 public class Client {
     @Id
     @SequenceGenerator(
@@ -81,55 +86,6 @@ public class Client {
         this.onames = onames;
         this.client_idno = client_idno;
         this.dob = dob;
-        this.email = email;
-    }
-
-    //refactor using lombook : https://medium.com/devdomain/using-lombok-in-spring-boot-simplifying-your-code-c38057894cb8
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFname() {
-        return fname;
-    }
-
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
-
-    public String getOnames() {
-        return onames;
-    }
-
-    public void setOnames(String onames) {
-        this.onames = onames;
-    }
-
-    public Long getClient_idno() {
-        return client_idno;
-    }
-
-    public void setClient_idno(Long client_idno) {
-        this.client_idno = client_idno;
-    }
-
-    public LocalDate getDob() {
-        return dob;
-    }
-
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
     }
 
