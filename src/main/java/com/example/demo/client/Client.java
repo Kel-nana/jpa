@@ -23,6 +23,7 @@ public class Client {
            strategy = GenerationType.SEQUENCE,
             generator = "client_sequence"
     )
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(
             name = "id",
