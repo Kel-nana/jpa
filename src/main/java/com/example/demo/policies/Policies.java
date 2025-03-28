@@ -51,14 +51,17 @@ public class Policies {
     @Column(name = "pol_auth_status", nullable = false)
     private String pol_auth_status;
 
-    public Policies(LocalDate pol_auth_date, LocalDate pol_cover_to, LocalDate pol_cover_from, Long pol_client_id, String pol_business_type, String pol_ref_no, String pol_insurer_no, String pol_auth_status) {
-        this.pol_auth_date = pol_auth_date.atStartOfDay();
-        this.pol_cover_to = pol_cover_to.atStartOfDay();
-        this.pol_cover_from = pol_cover_from.atStartOfDay();
+    public Policies(LocalDateTime pol_auth_date, LocalDateTime pol_cover_to, LocalDateTime pol_cover_from,
+                    Long pol_client_id, String pol_business_type, String pol_ref_no,
+                    String pol_insurer_no, String pol_auth_status) {
+        this.pol_auth_date = pol_auth_date;
+        this.pol_cover_to = pol_cover_to;
+        this.pol_cover_from = pol_cover_from;
         this.pol_client_id = pol_client_id;
         this.pol_business_type = pol_business_type;
         this.pol_ref_no = pol_ref_no;
         this.pol_insurer_no = pol_insurer_no;
         this.pol_auth_status = pol_auth_status;
     }
+
 }
