@@ -1,5 +1,6 @@
 package com.example.demo.policies;
 
+import com.example.demo.client.Client;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -41,8 +42,8 @@ public class Policies {
     private LocalDateTime pol_cover_to;
     @Column(name = "pol_cover_from", nullable = false)
     private LocalDateTime  pol_cover_from;
-    @Column(name = "pol_client_id", nullable = false)
-    private Long pol_client_id;
+//    @Column(name = "pol_client_id", nullable = false)
+//    private Long pol_client_id;
     @Column(name = "pol_business_type", nullable = false)
     private String pol_business_type;
     @Column(name = "pol_ref_no", nullable = false)
@@ -51,13 +52,16 @@ public class Policies {
     @Column(name = "pol_auth_status", nullable = false)
     private String pol_auth_status;
 
+    @ManyToOne
+    @JoinColumn(name = "pol_client_id", nullable = false)
+    private Client client;
+
     public Policies(LocalDateTime pol_auth_date, LocalDateTime pol_cover_to, LocalDateTime pol_cover_from,
-                    Long pol_client_id, String pol_business_type, String pol_ref_no,
+                    String pol_business_type, String pol_ref_no,
                     String pol_insurer_no, String pol_auth_status) {
         this.pol_auth_date = pol_auth_date;
         this.pol_cover_to = pol_cover_to;
         this.pol_cover_from = pol_cover_from;
-        this.pol_client_id = pol_client_id;
         this.pol_business_type = pol_business_type;
         this.pol_ref_no = pol_ref_no;
         this.pol_insurer_no = pol_insurer_no;

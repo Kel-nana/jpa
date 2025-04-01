@@ -16,11 +16,11 @@ public class ClientConfig {
     CommandLineRunner commandLineRunner(ClientRepository repository) {
         return args -> {
             Client Philip = new Client(
-                    "Philip",
-                    "Butoyi",
-                    21347391L,
+                    "Charles",
+                    "Kariuki",
+                    21359091L,
                     LocalDate.of(2019, Month.APRIL, 05),
-                    "butoyi@gmail.com"
+                    "ckariuuki@gmail.com"
             );
 
 //            Client Brian = new Client(
