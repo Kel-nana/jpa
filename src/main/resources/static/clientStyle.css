@@ -1,0 +1,45 @@
+ body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
+ }
+
+ .title_container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 50vh;
+  border: 0.65px solid grey;
+  border-radius:4px;
+  color: grey;
+ }
+
+ .client_title {
+ border: 4px solid;
+ border-radius:8px;
+ width: 80%;
+ height: 20vh;
+ text-align:center
+ writing-mode: vertical-rl;
+ text-orientation: upright;
+ }
+
+
+ table {
+          width: 80%;
+          border-collapse: collapse;
+          margin: 20px auto;
+          border-radius:8px;
+        }
+
+table, th, td {
+          border: 1px solid #ccc;
+        }
+
+th, td {
+          padding: 8px 12px;
+          text-align: left;
+        }
